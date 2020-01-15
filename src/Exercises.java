@@ -2,10 +2,12 @@ public class Exercises {
 
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
-			return false;
+		  return false;
 		}
 		
-		// write your code here
+		if ((a[0] == b[0])||(a[a.length] == b[b.length])) {
+      			return true;
+    		}
 		
 		return false;	// default return value to ensure compilation
 	}
