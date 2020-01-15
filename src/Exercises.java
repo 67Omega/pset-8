@@ -7,9 +7,9 @@ public class Exercises {
 		
 		if ((a[0] == b[0])||(a[a.length] == b[b.length])) {
       			return true;
+    		} else {
+      			return false;	// default return value to ensure compilation
     		}
-		
-		return false;	// default return value to ensure compilation
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
