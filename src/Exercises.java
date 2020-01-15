@@ -13,9 +13,17 @@ public class Exercises {
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
-		
-		return null;	// default return value to ensure compilation
+		if ((values.length < n) || (values == null) || (n <= 0)) {
+      			return Collections.emptyList();
+    		}
+    		String[] returnnums = new String[(2 * values.length)];
+		for (int i = 0; i <= n; i++) {
+      			returnnums[i] = values[i];
+    		}
+    		for (int i = 0; i <= n; i++) {
+      			returnnums[returnnums.length + i] = values[values.length - i];
+    		}
+		return returnnums;
 	}
 	
 	public int difference(int[] numbers) {
