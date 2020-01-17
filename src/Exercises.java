@@ -13,17 +13,27 @@ public class Exercises {
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		if ((values.length < n) || (values == null) || (n <= 0)) {
-      			return Collections.emptyList();
-    		}
-    		String[] returnnums = new String[(2 * values.length)];
+		String[] emptyArray = new String[0];
+		boolean emptyTest = true;
+    if ((values.length < n) || (values == null) || (n <= 0)) {
+    	return emptyArray;
+    }
+    String[] returnEnds = new String[(2 * values.length)];
 		for (int i = 0; i <= n; i++) {
-      			returnnums[i] = values[i];
-    		}
-    		for (int i = 0; i <= n; i++) {
-      			returnnums[returnnums.length + i] = values[values.length - i];
-    		}
-		return returnnums;
+      returnEnds[i] = values[i];
+	if (values[i] != null) {
+    		emptyTest = false;
+    		break;
+  	}
+    }
+    for (int i = 0; i <= n; i++) {
+      returnEnds[returnEnds.length + i] = values[(values.length - n) + i];
+    }
+		  if (returnEnds == null || returnEnds.length == 0 || emptyTest == true){
+        return emptyArray;
+      } else {
+        return returnEnds;
+      }
 	}
 	
 	public int difference(int[] numbers) {
