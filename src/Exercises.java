@@ -12,14 +12,17 @@ public class Exercises {
     		}
 	}
 	
-	public String[] endsMeet(String[] values, int n) {
+	public static String[] endsMeet(String[] values, int n) {
 		String[] emptyArray = new String[0];
 		boolean emptyTest = true;
-    if ((values.length < n) || (values == null) || (n <= 0)) {
+    if ((values == null) || (values.length < n) || (n <= 0)){
     	return emptyArray;
     }
     String[] returnEnds = new String[(2 * values.length)];
 		for (int i = 0; i <= n; i++) {
+      if (i > (values.length - 1)) {
+        return emptyArray;
+      }
       returnEnds[i] = values[i];
 	if (values[i] != null) {
     		emptyTest = false;
